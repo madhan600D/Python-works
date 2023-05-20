@@ -1,0 +1,124 @@
+console:
+<RoundedTextInput>:
+    background_normal:'normal.png'
+    background_active:'active.png'
+    
+
+
+<console>:
+    orientation:"vertical"
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'flamesbg.jpg'
+            size: root.width, root.height
+            pos: self.pos
+    BoxLayout:
+        orientation:"vertical"
+            
+        BoxLayout:
+            Label:
+                text:"F"
+                id:f
+                font_name:"tusj"
+                color:1,0,0,1
+                font_size:"30sp"
+                opacity:1
+            Label:
+                text:"L"
+                font_name:"tusj"
+                font_size:"30sp"
+                color:1,1,1,2
+
+            Label:
+                id:a
+                text:"A"
+                font_name:"tusj"
+                color:1,0,0,1
+                font_size:"30sp"
+                color:1,0,0,1
+
+            Label:
+                id:m
+                text:"M"
+                font_name:"tusj"
+                font_size:"30sp"
+                color:1,1,1,2
+
+            Label:
+                text:"E"
+                font_name:"tusj"
+                font_size:"30sp"
+                color:1,1,1,2
+
+            Label:
+                id:s
+                text:"S"
+                font_name:"tusj"
+                font_size:"30sp"
+                color:1,0,0,1
+        Label:
+            text:root.result
+            color:1,1,1,1
+            font_size:'30sp'
+            size_hint:0.5,0.5
+            halign:'center'
+            pos_hint:{'x':0.25}
+            font_name:"tusj"
+            markup:True
+        BoxLayout:
+            orientation:"vertical"
+            BoxLayout:
+                orientation:"horizontal"
+                halign:'center'
+                Label:
+                    text: 'Enter the [color=#FF0000]FIRST[/color] Name:'
+                    font_name: "tusj"
+                    font_size: "30sp"
+                    markup: True
+            RoundedTextInput:
+                color:1,1,1,0.3
+                font_size:'20sp'
+                id:first_name
+                multiline:False
+                halign:'center'
+                malign:'center'
+                size_hint:.5,.5
+                pos_hint:{'x':.25}
+                color:1, 0.56, 0.64, 1
+                font_size:'20sp'
+
+            BoxLayout:
+                orientation:"vertical"
+                Label:
+                    text: 'Enter the [color=#FF0000]SECOND[/color] name:'
+                    font_name: "tusj"
+                    font_size: "30sp"
+                    markup: True
+                RoundedTextInput:
+                    color:1,1,1,0.3
+                    font_size:'20sp'
+                    id:second_name
+                    multiline:False
+                    halign:'center'
+                    size_hint:.5,1
+                    pos_hint:{'x':.25} 
+            BoxLayout:
+                orientation:"horizontal"
+                padding:20
+                Button:
+                    allow_strech:False
+                    text:"OK!"
+                    font_name:"Pacifico"
+                    font_size:"30sp"
+                    on_press:root.button_press(),root.flames()
+                Button:
+                    text:"Clear"
+                    font_name:"Pacifico"
+                    font_size:"30sp"
+
+
+       
+        
+        
